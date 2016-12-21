@@ -70,12 +70,16 @@ File.open("day8-input", "r") do |f|
 end
 
 counter = 0
-0.upto(grid.count() -1) do |x_idx|
-	0.upto(grid[x_idx].count() -1) do |y_idx|
-		if grid[x_idx][y_idx] == 1
-			counter += 1
+0.upto(grid[0].count() -1) do |y_idx|
+	0.upto(grid.count() -1) do |x_idx|
+		if grid[x_idx][y_idx] == 0
+	        	grid[x_idx][y_idx] = "."
+		elsif grid[x_idx][y_idx] == 1
+	        	grid[x_idx][y_idx] = "#"
 		end
+		print grid[x_idx][y_idx]
 	end
+	puts ""
 end
 
 puts counter
